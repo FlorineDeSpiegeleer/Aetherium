@@ -1,6 +1,6 @@
 # Aetherium Academy — De Nacht van de Holle Ster
 
-Volledige projector + phone + print versie voor 3 spelers.
+Volledige projector + phone + print versie voor 3 spelers. 
 
 ## Installeren op GitHub Pages
 1. Maak één nieuwe GitHub repository.
