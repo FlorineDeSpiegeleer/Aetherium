@@ -1,0 +1,20 @@
+<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Margot - Aetherium</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><div class='phone-ambient'></div><div class="wrap"><div class="panel"><div class="player-banner"><img src="../assets/margot_portrait.jpg" alt="Margot"><div class="center"><div class="icon">🐺</div><h1>Margot</h1><p class="muted">Mythic Lore</p></div></div><div class="notice">Je maan-en-pijl pin is eigenlijk een miniatuur wardanker. Je herkent mythische patronen sneller dan de meeste docenten willen toegeven.</div><p class="muted small">Je hebt een beker warme chocolademelk laten staan in de hal. Er hangt een piepkleine slechtvalk-pin aan het handvat.</p><div id="content"></div></div></div>
+<script>
+const phase=new URLSearchParams(location.search).get("phase")||"1";
+const DATA={
+"1":{title:"Een symbool dat je kent",text:"Op de metalen ring staat een half weggeschuurd teken. Jij herkent het niet als spreuk, maar als een oud onderhoudsteken van astrale instrumenten.",options:[["Vergelijk het met academische orden", "M1-A"], ["Denk aan oude jacht- en navigatiesymboliek", "M1-B"], ["Koppel het aan instrumentmakers", "M1-C"]]},
+"2":{title:"Een privékeuze",text:"Kies wie je mee zou nemen naar een afgesloten gang vol onbekende magie. Dat zegt misschien meer dan je denkt.",options:[["Rowan", "M2-R"], ["Kestrel", "M2-K"], ["Maeve", "M2-M"], ["Elias", "M2-E"]]},
+"3":{title:"De afgesloten nis",text:"In een nis vind je een oud onderhoudsplaatje. E\u00e9n woord is weggekrast, maar het embleem komt overeen met wat je eerder zag.",options:[["Maak een mentale kopie", "M3-A"], ["Controleer slijtage en ouderdom", "M3-B"], ["Laat het liggen alsof niemand het vond", "M3-C"]]}
+};
+function render(){
+ let x=DATA[phase];let el=document.getElementById("content");
+ el.innerHTML="<h2>"+x.title+"</h2><div class='notice'>"+x.text+"</div><p><strong>Je hoeft dit niet met de anderen te delen.</strong></p><div class='choicegrid'>"+
+ x.options.map(o=>"<button onclick=\"finish('"+o[1]+"')\">"+o[0]+"</button>").join("")+"</div>";
+}
+function finish(code){
+ localStorage.setItem("aetherium_margot_phase"+phase,code);
+ document.getElementById("content").innerHTML="<div class='center'><h2>Klaar</h2><p>Onthoud deze code en vul hem op de beamer in.</p><div class='bigcode'><strong>"+code+"</strong></div><p class='muted'>Je mag nu zelf beslissen wat je aan de anderen vertelt.</p></div>";
+}
+render();
+</script></body></html>

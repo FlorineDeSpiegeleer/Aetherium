@@ -1,0 +1,20 @@
+<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Florine - Aetherium</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><div class='phone-ambient'></div><div class="wrap"><div class="panel"><div class="player-banner"><img src="../assets/florine_portrait.jpg" alt="Florine"><div class="center"><div class="icon">🔮</div><h1>Florine</h1><p class="muted">Echo Sight</p></div></div><div class="notice">Je zilveren konijnencharme, Felix, wordt warm wanneer een echo dichtbij is. Je bent creatief en koppig genoeg om een visioen niet zomaar te vertrouwen.</div><p class="muted small">Een thermos met sojakoffie staat nog in je tas. Op de dop zit een klein blauw sterretje.</p><div id="content"></div></div></div>
+<script>
+const phase=new URLSearchParams(location.search).get("phase")||"1";
+const DATA={
+"1":{title:"Een echo trekt je aandacht",text:"Voor \u00e9\u00e9n hartslag staat het observatorium weer vol leven. Je hoort Veyne zeggen: \u201cJe hebt de uitlijning veranderd.\u201d Daarna: drie klokslagen \u2014 maar het geluid voelt vreemd vertraagd.",options:[["Volg vooral de stem in het visioen", "F1-A"], ["Probeer de emotie van Veyne te voelen", "F1-B"], ["Focus op het ritme van de klokslagen", "F1-C"]]},
+"2":{title:"Een privékeuze",text:"Je hoeft niet te kiezen wie je 'leuk' vindt. Kies wie je instinctief vertrouwt wanneer het spannend wordt.",options:[["Rowan", "F2-R"], ["Kestrel", "F2-K"], ["Maeve", "F2-M"], ["Elias", "F2-E"]]},
+"3":{title:"De sterrentrap",text:"Je ziet een korte echo van een figuur die iets kleins en krijtachtigs van een handschoen veegt. Het beeld is te gebroken om een gezicht te zien.",options:[["Volg de echo tot ze breekt", "F3-A"], ["Zoek naar een herkenbaar geluid", "F3-B"], ["Stop en onthoud enkel de beweging", "F3-C"]]}
+};
+function render(){
+ let x=DATA[phase];let el=document.getElementById("content");
+ el.innerHTML="<h2>"+x.title+"</h2><div class='notice'>"+x.text+"</div><p><strong>Je hoeft dit niet met de anderen te delen.</strong></p><div class='choicegrid'>"+
+ x.options.map(o=>"<button onclick=\"finish('"+o[1]+"')\">"+o[0]+"</button>").join("")+"</div>";
+}
+function finish(code){
+ localStorage.setItem("aetherium_florine_phase"+phase,code);
+ document.getElementById("content").innerHTML="<div class='center'><h2>Klaar</h2><p>Onthoud deze code en vul hem op de beamer in.</p><div class='bigcode'><strong>"+code+"</strong></div><p class='muted'>Je mag nu zelf beslissen wat je aan de anderen vertelt.</p></div>";
+}
+render();
+</script></body></html>

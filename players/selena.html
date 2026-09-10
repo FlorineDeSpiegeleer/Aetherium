@@ -1,0 +1,20 @@
+<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Selena - Aetherium</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><div class='phone-ambient'></div><div class="wrap"><div class="panel"><div class="player-banner"><img src="../assets/selena_portrait.jpg" alt="Selena"><div class="center"><div class="icon">🌿</div><h1>Selena</h1><p class="muted">Verdant Sense</p></div></div><div class="notice">Je jackalope-familiar is klein, koppig en bijzonder goed in ongewenste planten besnuffelen. Niemand weet waarom hij dol is op kaneel.</div><p class="muted small">Je ceremoniedrank is een felblauwe alcoholvrije mocktail. Je beweert dat dit volledig academisch verantwoord is.</p><div id="content"></div></div></div>
+<script>
+const phase=new URLSearchParams(location.search).get("phase")||"1";
+const DATA={
+"1":{title:"De geur onder de geur",text:"Aan een gevonden papier hangt dennenhars. Daaronder zit iets bitters en mineraalachtigs. Het voelt niet als een kruid dat je in een drankje zou stoppen.",options:[["Vergelijk met conserveringshars", "S1-A"], ["Denk aan geneeskrachtige kruiden", "S1-B"], ["Zoek naar een tweede bron van dezelfde geur", "S1-C"]]},
+"2":{title:"Een privékeuze",text:"Kies wie je als eerste zou aanspreken wanneer je iets vreemds ruikt en niet weet of het gevaarlijk is.",options:[["Rowan", "S2-R"], ["Kestrel", "S2-K"], ["Maeve", "S2-M"], ["Elias", "S2-E"]]},
+"3":{title:"De koude werktafel",text:"Op een doek vind je dezelfde bittere geur, gemengd met fijn lichtgevend stof. Het ruikt eerder naar werkmateriaal dan naar voedsel of parfum.",options:[["Wrijf het niet aan; onthoud de geur", "S3-A"], ["Vergelijk het met hars", "S3-B"], ["Zoek waar het stof nog ligt", "S3-C"]]}
+};
+function render(){
+ let x=DATA[phase];let el=document.getElementById("content");
+ el.innerHTML="<h2>"+x.title+"</h2><div class='notice'>"+x.text+"</div><p><strong>Je hoeft dit niet met de anderen te delen.</strong></p><div class='choicegrid'>"+
+ x.options.map(o=>"<button onclick=\"finish('"+o[1]+"')\">"+o[0]+"</button>").join("")+"</div>";
+}
+function finish(code){
+ localStorage.setItem("aetherium_selena_phase"+phase,code);
+ document.getElementById("content").innerHTML="<div class='center'><h2>Klaar</h2><p>Onthoud deze code en vul hem op de beamer in.</p><div class='bigcode'><strong>"+code+"</strong></div><p class='muted'>Je mag nu zelf beslissen wat je aan de anderen vertelt.</p></div>";
+}
+render();
+</script></body></html>

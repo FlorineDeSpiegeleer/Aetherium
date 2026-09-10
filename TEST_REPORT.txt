@@ -1,0 +1,49 @@
+PASS index.html exists
+PASS game.js exists
+PASS story.dat exists
+PASS print PDF exists
+PASS florine phone page exists
+PASS margot phone page exists
+PASS selena phone page exists
+PASS asset academy.jpg
+PASS asset library.jpg
+PASS asset greenhouse.jpg
+PASS asset alchemy.jpg
+PASS asset hall.jpg
+PASS asset observatory.jpg
+PASS asset aetherium_ambience.wav
+PASS asset transition_chime.wav
+PASS 5 clue keys present
+PASS dialogue sets present
+PASS prologue has long dialogue
+PASS code F1-A mapped
+PASS code M1-A mapped
+PASS code S1-A mapped
+PASS code F2-R mapped
+PASS code M2-R mapped
+PASS code S2-R mapped
+PASS code F3-A mapped
+PASS code M3-A mapped
+PASS code S3-A mapped
+PASS reference assets/style.css
+PASS reference assets/aetherium_ambience.wav
+PASS reference assets/transition_chime.wav
+PASS reference assets/observatory.jpg
+PASS reference assets/library.jpg
+PASS reference assets/greenhouse.jpg
+PASS reference assets/alchemy.jpg
+PASS reference assets/hall.jpg
+PASS reference assets/florine_portrait.jpg
+PASS reference assets/margot_portrait.jpg
+PASS reference assets/selena_portrait.jpg
+PASS reference assets/rowan.jpg
+PASS reference assets/kestrel.jpg
+PASS reference assets/maeve.jpg
+PASS reference assets/elias.jpg
+PASS reference assets/florine_portrait.jpg
+PASS reference assets/margot_portrait.jpg
+PASS reference assets/selena_portrait.jpg
+PASS reference assets/florine_portrait.jpg
+PASS reference assets/margot_portrait.jpg
+PASS reference assets/selena_portrait.jpg
+PASS reference assets/game.js
